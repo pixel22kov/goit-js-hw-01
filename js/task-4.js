@@ -161,3 +161,77 @@ console.log(createFileName("   order ", "txt")); // Очікуємо: "order.txt
 console.log(createFileName("  finance ", "xml")); // Очікуємо: "finance.xml"
 console.log(createFileName("  report", "csv"));  // Очікуємо: "report.csv"
 console.log(createFileName(" file ", "json")); // Очікуємо: "file.json"
+
+
+
+function calculateTotal(number) {
+  let total = 0;
+  let current = 1;
+  while (current <= number) {
+    total += current;
+    current += 1;
+  }
+  return total;
+}
+console.log(calculateTotal(1));  // Очікуємо: 1
+console.log(calculateTotal(3));  // Очікуємо: 6
+console.log(calculateTotal(0));  // Очікуємо: 0
+console.log(calculateTotal(18)); // Очікуємо: 171
+console.log(calculateTotal(24)); // Очікуємо: 300
+
+
+
+function calculateTotalNum(number) {
+  let total = 0;
+  for (let i = 1; i <= number; i++) {
+   total += i;
+}
+  return total;
+}
+console.log(calculateTotalNum(1));  // Очікуємо: 1
+console.log(calculateTotalNum(3));  // Очікуємо: 6
+console.log(calculateTotalNum(7));  // Очікуємо: 28
+console.log(calculateTotalNum(24));  // Очікуємо: 300
+
+
+
+function calculateEvenTotal(number) {
+  let total = 0; // Ініціалізуємо змінну для накопичення суми
+  for (let x = 1; x <= number; x++) { // Перебираємо всі числа від 1 до number
+    if (x % 2 === 0) { // Перевіряємо, чи є число парним
+      total += x; // Додаємо парне число до total
+    }
+  }
+  return total; // Повертаємо загальну суму
+}
+console.log(calculateEvenTotal(1));  // Очікуємо: 0
+console.log(calculateEvenTotal(3));  // Очікуємо: 2
+console.log(calculateEvenTotal(18));  // Очікуємо: 90
+console.log(calculateEvenTotal(27));  // Очікуємо: 182
+
+
+
+const start = 6;
+const end = 17;
+let number;
+
+for (let i = start; i <= end; i++) {
+  if (i % 5 === 0) {
+    number = i;
+    break;
+  }
+}
+console.log(number); // 10
+
+
+
+function findNumber(start, end, divisor) {
+  for (let i = start; i <= end; i++) {
+    if (i % divisor === 0) {
+      return i; // Повертаємо число, яке ділиться на divisor без залишку
+    }
+  }
+}
+console.log(findNumber(2, 6, 5)); // 5
+console.log(findNumber(8, 17, 3)); // 9
+console.log(findNumber(16, 35, 7)); // 21
