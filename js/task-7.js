@@ -78,7 +78,7 @@ console.log(calculateTotalPprice([412, 371, 94, 63, 176]));
 
 const filterrArray = (numbers, value) => {
   const filteredNumbers = [];
-  
+
   numbers.forEach((number) => {
     if (number > value) {
       filteredNumbers.push(number);
@@ -111,15 +111,15 @@ console.log(doubledNumbers);
 
 function changeEven(numbers, value) {
   const newArray = [];
-  
+
   numbers.forEach(item => {
-    if (item % 2 === 0) { 
+    if (item % 2 === 0) {
       newArray.push(item + value);
     } else {
       newArray.push(item); // Якщо число не парне, додаємо його без змін
     }
   });
-  
+
   return newArray; // Повертаємо результат
 }
 console.log(changeEven([1, 2, 3, 4, 5], 10));
@@ -165,3 +165,96 @@ const totalAveragePlaytimePerGame = newPlayers.reduce((acc, player) => {
 }, 0);
 
 console.log(totalAveragePlaytimePerGame); // 1023.5
+
+
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+
+const ascendingReleaseDates = releaseDates.toSorted((a, b) => a - b);
+
+const descendingReleaseDates = releaseDates.toSorted((a, b) => b - a);
+console.log(ascendingReleaseDates);
+console.log(descendingReleaseDates);
+
+
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    rating: 7.94,
+  },
+  {
+    title: "Enemy of God",
+    author: "Bernard Cornwell",
+    rating: 8.67,
+  },
+];
+
+const sortedByAuthorName = books.toSorted((firstAuthor, secondAuthor) =>
+  firstAuthor.author.localeCompare(secondAuthor.author)
+);
+
+const sortedByReversedAuthorName = books.toSorted((firstAuthor, secondAuthor) =>
+  secondAuthor.author.localeCompare(firstAuthor.author)
+);
+
+const sortedByAscendingRating = books.toSorted((firstRating, secondRating) =>
+  firstRating.rating - secondRating.rating
+);
+
+const sortedByDescendingRating = books.toSorted((firstRating, secondRating) =>
+  secondRating.rating - firstRating.rating
+);
+console.log(sortedByAuthorName);
+console.log(sortedByReversedAuthorName);
+console.log(sortedByAscendingRating);
+console.log(sortedByDescendingRating);
+
+
+
+const OldBooks = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+
+const names = OldBooks
+  .filter(book => book.rating > MIN_BOOK_RATING) // Фільтруємо книги за рейтингом
+  .toSorted((a, b) => a.author.localeCompare(b.author)) // Сортуємо за автором
+  .map(book => book.author); // Отримуємо лише назви avtoriv
+  console.log(names);
